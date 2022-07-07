@@ -1,0 +1,26 @@
+{
+  "name": "learn_ts",
+  "version": "1.0.0",
+  "description": "typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -cw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dduohereshui/learn_ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dduohereshui/learn_ts/issues"
+  },
+  "homepage": "https://github.com/dduohereshui/learn_ts#readme",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.75.7",
+    "rollup-plugin-serve": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.4"
+  }
+}
