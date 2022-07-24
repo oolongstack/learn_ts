@@ -4,6 +4,10 @@ class Pointer {
   draw() {
     return this.x * this.y;
   }
+  get name() {
+    return "pointer";
+  }
+  set name(val) {}
 }
 const p = new Pointer(100, 200);
 console.log(p.x, p.y);
