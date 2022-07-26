@@ -62,4 +62,34 @@ type MyConstructorParameters<T> = T extends new (...args: infer P) => any
   ? P
   : never;
 type MyInstanceType<T> = T extends new (...args: any[]) => any ? T : never;
+
+// infer 案例 tuple转为Union
+// type TupleToUnion<T> = T extends [infer U, ...any[]] ? U : never;
+type Tuple = [string, number, boolean];
+
+type TupleToUnion<T> = T extends Array<infer E> ? E : never;
+
+type Union = TupleToUnion<Tuple>; // string | number | boolean
+
+// Union 转为 Intersection
+
+type T1 = { name: string };
+type T2 = { age: number };
+
+// type T3 = T1 | T2;
+
+type UnionToIntersection<T> = T extends {
+  a: (x: infer U) => void;
+  b: (x: infer U) => void;
+}
+  ? U
+  : never;
+
+type Inter = UnionToIntersection<{ a: (x: T1) => void; b: (x: T2) => void }>;
+
+const bb: Inter = {
+  name: "张三",
+  age: 20,
+};
+
 export {};
